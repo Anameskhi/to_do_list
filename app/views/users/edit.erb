@@ -1,0 +1,62 @@
+<div class = "container" width: 20% >
+<div style = "width:400px; margin:30 auto">
+<h2> Edit profile </h2><br>
+<form method = "post" action = "/users/edit">
+              <% unless flash[:error_messages].nil?%>
+              <%flash[:error_messages].each do |error_message|%>
+              <div class="alert alert-danger" role="alert">
+                  <%=error_message %>
+                </div>
+              <%end%>
+
+              <%end%>
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+  <label class="form-label" for="form2Example1">Email address</label>
+    <input value = "<%=@user['email']%> "name = "email" type="email" id="form2Example1" class="form-control" />
+    
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+   <label class="form-label" for="form2Example2">Name</label>
+    <input value = "<%=@user['name']%>"name = "name" type="text" id="form2Example2" class="form-control" />
+    
+  </div>
+  <div class="form-outline mb-4">
+   <label class="form-label" for="form2Example2">Current Password</label>
+    <input name = "password" type="password" id="form2Example2" class="form-control" />
+    
+  </div>
+
+  <div class="form-outline mb-4">
+  <label class="form-label" for="form2Example2">New Password</label>
+    <input name = "new_password" type="password" id="form2Example2" class="form-control" />
+    
+  </div>
+
+  <div class="form-outline mb-4">
+  <label class="form-label" for="form2Example2">Confirm New Password</label>
+    <input name = "confirm_password" type="password" id="form2Example2" class="form-control" />
+    
+  </div>
+
+  <!-- 2 column grid layout for inline styling -->
+  <div class="row mb-4">
+    <div class="col d-flex justify-content-center">
+      <!-- Checkbox -->
+    
+    </div>
+
+   
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Save</button><br>
+  <a class="text-danger btn-block mb-6" href="<%=url('/users/deleteaccount')%>">Deactivate account</a>
+
+  <!-- Register buttons -->
+  
+</form>
+</div>
+</div>

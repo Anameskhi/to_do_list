@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 2
+  database: sinatra
+  username: postgres
+  password: Meskhi10
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: sinatra
+  
+production:
+  <<: *default
+  database: sinatra

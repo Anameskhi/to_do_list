@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+
+source 'http://rubygems.org'
+gem 'activerecord', require: 'active_record'
+gem 'rake'
+gem 'require_all'
+gem 'sinatra'
+gem 'sinatra-activerecord', require: 'sinatra/activerecord'
+gem 'pg'
+gem 'bcrypt'
+gem 'pry'
+gem 'shotgun'
+gem 'thin'
+gem 'tux'
+gem 'rack'
+gem 'bcrypt'
+gem 'sinatra-flash', '~> 0.3.0'
