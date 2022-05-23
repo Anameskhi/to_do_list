@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
   end
   before do
     if (['/users/signin', '/users/new'].any? request.path_info) && !session['user_id'].nil?
-      redirect('/todos/show')
+      redirect('/todos/list')
     end
 
     if (['/users/signin', '/users/new'].none? request.path_info) && session['user_id'].nil?

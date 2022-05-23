@@ -1,0 +1,32 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col col-xl-10">
+
+        <div class="card">
+          <div class="card-body p-5">
+
+            <form method = "post" action = '/todos/<%=@list['id']%>/edit' >
+            <% unless flash[:error_messages].nil?%>
+              <%flash[:error_messages].each do |error_message|%>
+              <div class="alert alert-danger" role="alert">
+                  <%=error_message %>
+                </div>
+              <%end%>
+
+              <%end%>
+
+              <div class="form-outline mb-4">
+                <input value = "<%=@list.lists_name%>" name = "text" type="text" id="form2" class="form-control" />
+                <label class="form-label" for="form2">New List...</label>
+              </div>
+              <div class="form-outline mb-4">
+              <button style = "float:right;" type="submit" class="btn btn-info ms-2">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+</section>
