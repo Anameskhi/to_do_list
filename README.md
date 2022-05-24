@@ -1,5 +1,5 @@
 # To Do
-This is simple todo app written in sinatra, using tailwind css framework in front-end
+This is simple todo app written in sinatra, using Bootstrap css framework in front-end
 
 
 ## To install
