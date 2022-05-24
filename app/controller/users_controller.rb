@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     if !!find_user && BCrypt::Password.new(find_user['password_digest']) == params['password']
       session['user_id'] = find_user['id']
       flash[:success_message] = "Successfully Loggedin"
-      redirect('/todos/show')
+      redirect('/todos/list')
     else
       flash[:error_messages] = ["Email or Password is inccorect"]
       redirect('/users/signin')
