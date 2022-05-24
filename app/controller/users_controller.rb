@@ -4,15 +4,6 @@ class UsersController < ApplicationController
 
 
   get '/users/signin' do 
-    # User::create(name: 'tgthg', email: 'jhbjhb', password_digest: 'jygbhvbhgvgfcg')
-
-
-    # user = User::find(1)
-    # user.email = 'anaaa'
-    # user.save 
-
-    # user =  User::find(1)
-    # user.destroy
 
     erb :'users/signin'
   end
@@ -31,7 +22,7 @@ class UsersController < ApplicationController
     if !!find_user && BCrypt::Password.new(find_user['password_digest']) == params['password']
       session['user_id'] = find_user['id']
       flash[:success_message] = "Successfully Loggedin"
-      redirect('/todos/show')
+      redirect('/todos/list')
     else
       flash[:error_messages] = ["Email or Password is inccorect"]
       redirect('/users/signin')

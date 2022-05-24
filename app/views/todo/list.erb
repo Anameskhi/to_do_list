@@ -1,0 +1,61 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col col-xl-10">
+
+        <div class="card">
+          <div class="card-body p-5">
+
+            <form method = "post" action = '/todos/list' >
+            <% unless flash[:error_messages].nil?%>
+              <%flash[:error_messages].each do |error_message|%>
+              <div class="alert alert-danger" role="alert">
+                  <%=error_message %>
+                </div>
+              <%end%>
+
+              <%end%>
+
+              <div class="form-outline mb-4">
+                <input name = "text" type="text" id="form2" class="form-control" />
+                <label class="form-label" for="form2">New List...</label>
+              </div>
+              <div class="form-outline mb-4">
+              <button style = "float:right;" type="submit" class="btn btn-info ms-2">Add</button>
+              </div>
+            </form>
+          
+        </div>
+           <div class="tab-content" id="ex1-content">
+              <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel"
+                aria-labelledby="ex1-tab-1">
+                <ul class="list-group mb-0">
+                <% unless @lists.empty? %>
+                <%@lists.each do |list|%>
+                <li class="row" style = "margin-left:0px!important; margin-bottom:5px; padding:2px;">
+                  <div class="col-10"  style="background-color: #f4f6f7;">
+                  
+                  <a class = 'text-muted' style = "text-decoration: none" href = "#"><%=list['lists_name']%></a>
+                  
+                  </div>
+                  <div class="col-2" style = "text-align:right; padding-left:0px!important;">
+                      <div style="background-color: #f4f6f7;"> 
+                    <a  class="text-primary" style = "text-decoration: none" href = "/todos/<%=list['id']%>/edit">Edit</a>
+                    <a  class="text-danger" style = "text-decoration: none" href = "/todos/<%=list['id']%>/delete">Delete</a>
+                      </div>
+                  </div>
+                </li>
+
+                  <%end%>
+                  <%end%>
+               
+
+                </ul>
+              </div>
+          </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>

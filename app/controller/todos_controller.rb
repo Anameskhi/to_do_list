@@ -1,7 +1,9 @@
 class TodosController < ApplicationController
 
-  get '/todos/show' do 
+  get '/todos/todo' do 
 
-    erb :'todo/show'
+    erb :'todo/todo'
   end
+
+  
 end
