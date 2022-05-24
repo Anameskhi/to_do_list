@@ -7,5 +7,5 @@ This is simple todo app written in sinatra, using Bootstrap css framework in fro
 - ``Bundle install``
 - ``rake db:create``
 - ``rake: db:migrate``
-- run ``rackup config.ru`` or ``bundle exec rackup -p6969 --host 0.0.0.0``
+- run ``rackup config.ru`` or ``bundle exec rackup -p1010 --host 0.0.0.0``
 #  [Demo heroku website](https://todosinatra1.herokuapp.com).
