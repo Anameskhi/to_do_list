@@ -62,6 +62,7 @@ class UsersController < ApplicationController
     @user = User.find(session['user_id'])
     erb :'users/edit'
   end
+  
 
   post '/users/edit' do
     validate_info = validate_edit_user_info(params)
