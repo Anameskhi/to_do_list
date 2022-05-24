@@ -4,15 +4,6 @@ class UsersController < ApplicationController
 
 
   get '/users/signin' do 
-    # User::create(name: 'tgthg', email: 'jhbjhb', password_digest: 'jygbhvbhgvgfcg')
-
-
-    # user = User::find(1)
-    # user.email = 'anaaa'
-    # user.save 
-
-    # user =  User::find(1)
-    # user.destroy
 
     erb :'users/signin'
   end
